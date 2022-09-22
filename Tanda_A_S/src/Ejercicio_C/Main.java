@@ -1,10 +1,10 @@
-package Ejercicio_B;
+package Ejercicio_C;
 
 
 	import javafx.application.Application;
 	import javafx.collections.FXCollections;
 	import javafx.collections.ObservableList;
-	import javafx.geometry.Insets;
+	//import javafx.geometry.Insets;
 	import javafx.geometry.Pos;
 	import javafx.stage.Stage;
 	import javafx.stage.Window;
@@ -26,9 +26,9 @@ package Ejercicio_B;
 	public class Main extends Application {
 		private Label lblNombre, lblApellido, lblEdad;
 		private TextField tfNombre, tfApellido, tfEdad;
-		private Button btnAgregar;
-		private GridPane grid;
-		private VBox izquierda;
+		private Button btnAgregar, btnModifi, btnEliminar;
+		private GridPane grid, gBotones;
+		private VBox izquierda, derecha;
 		private TableView<Persona> tabla;
 		private ObservableList<Persona> lista;
 		
@@ -59,19 +59,32 @@ package Ejercicio_B;
 			colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
 			colEdad.prefWidthProperty().bind(tabla.widthProperty().multiply(0.333333333));
 			tabla.getColumns().addAll(colNombre,colApellido,colEdad);
-			Insets margin = new Insets(10, 10, 10, 10); 
-			GridPane.setMargin(tabla, margin);
-
-			tabla.setStyle("-fx-margin: 1022;");
+			//Insets margin = new Insets(10, 10, 10, 10); 
+			//GridPane.setMargin(tabla, margin);
+			GridPane.setHgrow(tabla,Priority.ALWAYS);
+			GridPane.setVgrow(tabla, Priority.ALWAYS);
+			
+			
+			btnModifi = new Button("Modificar");
+			btnEliminar = new Button("Eliminar");
+			
+			gBotones = new GridPane();
+			gBotones.getChildren().addAll(btnAgregar,btnEliminar);
+			
+			
+			
+			
+			
+			derecha = new VBox(10);
+			derecha.getChildren().add(tabla);
 			
 			grid = new GridPane();
 			grid.add(izquierda, 0, 0);
-			grid.add(tabla, 1, 0);
+			grid.add(derecha, 1, 0);
 			izquierda.setAlignment(Pos.CENTER_LEFT);
 			
 
-			GridPane.setHgrow(tabla,Priority.ALWAYS);
-			GridPane.setVgrow(tabla, Priority.ALWAYS);
+			
 
 			
 			
