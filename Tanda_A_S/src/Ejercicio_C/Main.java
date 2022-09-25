@@ -62,7 +62,7 @@ package Ejercicio_C;
 			//Insets margin = new Insets(10, 10, 10, 10); 
 			//GridPane.setMargin(tabla, margin);
 			GridPane.setHgrow(tabla,Priority.ALWAYS);
-			GridPane.setVgrow(tabla, Priority.ALWAYS);
+			//GridPane.setVgrow(tabla, Priority.ALWAYS);
 			
 			
 			btnModifi = new Button("Modificar");
@@ -76,7 +76,7 @@ package Ejercicio_C;
 			
 			
 			derecha = new VBox(10);
-			derecha.getChildren().add(tabla);
+			derecha.getChildren().addAll(tabla, gBotones);
 			
 			grid = new GridPane();
 			grid.add(izquierda, 0, 0);
