@@ -37,7 +37,7 @@ public class Main extends Application {
 	private ComboBox<String> edades;
 	private RadioButton rbHombre, rbMujer, rbOtro;
 	private ToggleGroup tGroup;
-	private Boolean fallo;
+	private Boolean fallo;//
 	@Override
 	public void start(Stage stage) {
 		Label lblTitulo = new Label("ENCUESTA");
